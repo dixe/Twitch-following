@@ -50,7 +50,8 @@ function calcHTML(channel){
             if (data2.stream!=null){
                 game = data2.stream.game;
                 link = data2.stream.channel.url;
-                var tuple={Game:game, Name:name,Link:link}
+                status =data2.stream.channel.status;
+                var tuple={Game:game, Name:name,Link:link, Status:status}
                 console.log("I TUPLEN"+tuple.Game+tuple.Name+tuple.Link);
                 tmpTuples.push(tuple);
             }
