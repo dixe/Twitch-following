@@ -38,10 +38,11 @@ function getChannels(){
 }
 
 function calcHTML(channel){
-    var name=channel.channel.name;
-    console.log(name);
-    var url = "https://api.twitch.tv/kraken/streams/"+name;
-    $.ajax({
+    if(channel != undefined){
+      var name= channel.channel.name;
+      console.log(name);
+      var url = "https://api.twitch.tv/kraken/streams/"+name;
+      $.ajax({
         asyn:false,
         type:"GET",
         url:url,
@@ -56,7 +57,8 @@ function calcHTML(channel){
                 tmpTuples.push(tuple);
             }
         }
-    });
+      });
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -71,5 +73,3 @@ var recursiveCall = function () {
   setTimeout(recursiveCall, fetchFreq);
   return;
 };
-
-//setInterval(getChannels(),fetchFreq);
