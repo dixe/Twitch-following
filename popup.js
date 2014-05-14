@@ -13,6 +13,7 @@ function creatDivs(games){
   }
 }
 function writeHTML(){
+  console.log("writing HTML");
   var tuples=chrome.extension.getBackgroundPage().tuples;
   var games=[];
   for (var i =0;i<tuples.length;i++){
@@ -52,7 +53,7 @@ function writeHTML(){
 
 document.addEventListener('DOMContentLoaded', function () {
   bg=chrome.extension.getBackgroundPage();
-  if (bg.tuples!=undefined){
+  if (bg.tuples != undefined){
     writeHTML();
   }
 });
