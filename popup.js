@@ -41,14 +41,7 @@ function writeHTML(){
     document.getElementById(div).appendChild(subDiv);
   }
 
-  if(tuples.length>0){
-    chrome.browserAction.setBadgeBackgroundColor({
-      color:[255,0,0,255]
-    });
-  }
-  chrome.browserAction.setBadgeText({
-    text:''+tuples.length
-  });
+
 }
 
 document.addEventListener('DOMContentLoaded', function () {

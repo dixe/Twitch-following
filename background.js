@@ -1,9 +1,8 @@
 var fetchFreq=30000;
 
-var tmpTuples;
+var tmpTuples ;
 var tuples;
-
-var working=false;
+var working = false;
 
 function getChannels(){
   working=true;
@@ -34,10 +33,12 @@ function getChannels(){
       console.log("Working is: " + working);
       tuples=tmpTuples;
       };
+
   callback();
 }
 
 function calcHTML(channel){
+
     if(channel != undefined){
       var name= channel.channel.name;
       console.log(name);
@@ -53,11 +54,24 @@ function calcHTML(channel){
                 link = data2.stream.channel.url;
                 status =data2.stream.channel.status;
                 var tuple={Game:game, Name:name,Link:link, Status:status}
-                console.log("I TUPLEN"+tuple.Game+tuple.Name+tuple.Link);
+                console.log("I TUPLEN "+tuple.Game+tuple.Name+tuple.Link);
                 tmpTuples.push(tuple);
+
+                // code that update the number of channels online
+                chrome.browserAction.setBadgeBackgroundColor({
+                        color:[255,0,0,255]
+                  });
+                // uses tmpTupes as the number of different live channels
+                chrome.browserAction.setBadgeText({
+                        text:'' + tmpTuples.length
+                            });
             }
         }
       });
+
+
+
+
     }
 }
 
