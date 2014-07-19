@@ -41,7 +41,6 @@ function writeHTML(){
     document.getElementById(div).appendChild(subDiv);
   }
 
-
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -49,4 +48,20 @@ document.addEventListener('DOMContentLoaded', function () {
   if (bg.tuples != undefined){
     writeHTML();
   }
+});
+
+
+// textbox searching code
+
+// click on textbox with jquery
+$(document).ready(function(){
+    $("#twitch-search").on('keypress',function (event) {
+        // 13 is enter
+        if(event.which == '13')
+        {
+          // get textbox value
+          var textBoxValue = document.getElementById("twitch-search").value;
+          window.open("http://www.twitch.tv/search?query=" + textBoxValue,'_black');
+        }
+    });
 });

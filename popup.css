@@ -22,3 +22,12 @@ a {
 color: #000 ;
 text-decoration: none
 }
+.searchDiv {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 6px;
+
+  background-color: black;  /* Replace with your own image */
+}
