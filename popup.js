@@ -44,6 +44,8 @@ function writeHTML(){
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  // focus on search bar on instant search
+   document.getElementById("twitch-search").focus();
   bg=chrome.extension.getBackgroundPage();
   if (bg.tuples != undefined){
     writeHTML();
