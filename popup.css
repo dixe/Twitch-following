@@ -1,6 +1,6 @@
 #myDiv {
     width: 300px;
-    height: 150px;
+    height: 100%;
 }
 
 .headingDiv {
@@ -8,14 +8,14 @@ color: #333333;
 font-family: Impact, Charcoal, sans-serif;
 text-decoration:none;
 font-size: 13pt;
-font-weight: normal
+font-weight: normal;
 }
 .gameDiv{
 color: #333333;
 font-family: Century Gothic, sans-serif;
 text-decoration:none;
 font-size: 11pt;
-font-weight: normal
+font-weight: normal;
 }
 
 a {
